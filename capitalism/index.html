@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>資本主義を説明できるようになる｜Day 1–3</title>
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --text:#17191d; --muted:#6b7280;
+  --line:#e5e7eb; --accent:#1f2937; --soft:#eef2f7; --ok:#166534; --bad:#991b1b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.65}
+a{color:#1d4ed8}
+button{font:inherit}
+.shell{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+.sidebar{background:#111827;color:#fff;padding:24px 18px;position:sticky;top:0;height:100vh}
+.brand{font-weight:700;font-size:18px;margin-bottom:6px}
+.sub{font-size:12px;color:#cbd5e1;margin-bottom:24px}
+.nav button{width:100%;text-align:left;border:0;background:transparent;color:#d1d5db;padding:11px 12px;border-radius:10px;cursor:pointer;margin:3px 0}
+.nav button:hover,.nav button.active{background:#1f2937;color:#fff}
+.progressbox{margin-top:24px;padding-top:18px;border-top:1px solid #374151;font-size:13px;color:#d1d5db}
+.bar{height:8px;background:#374151;border-radius:999px;overflow:hidden;margin:8px 0}
+.bar>div{height:100%;background:#d1d5db;width:0%}
+.main{padding:36px;max-width:980px;width:100%;margin:0 auto}
+.page{display:none}.page.active{display:block}
+.hero{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px;margin-bottom:22px}
+.eyebrow{font-size:12px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+h1{font-size:30px;line-height:1.25;margin:8px 0 12px}
+h2{font-size:21px;margin:0 0 14px}
+h3{font-size:16px;margin:0 0 10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}
+.goal{border-left:4px solid #111827}
+.quote{background:#f9fafb;border-left:4px solid #9ca3af;padding:14px 16px;border-radius:8px;color:#374151}
+.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.menu .item{background:#f9fafb;border:1px solid var(--line);padding:14px;border-radius:12px}
+.badge{display:inline-block;padding:4px 9px;border-radius:999px;background:var(--soft);font-size:12px;color:#374151}
+.cta{display:inline-block;border:0;background:#111827;color:white;padding:10px 14px;border-radius:10px;cursor:pointer;text-decoration:none}
+.cta.secondary{background:white;color:#111827;border:1px solid var(--line)}
+.quizq{padding:16px 0;border-top:1px solid var(--line)}
+.quizq:first-child{border-top:0}
+.options label{display:block;margin:8px 0;padding:9px 10px;background:#f9fafb;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.feedback{margin-top:10px;font-size:14px}
+.correct{color:var(--ok)} .wrong{color:var(--bad)}
+textarea{width:100%;min-height:150px;border:1px solid #d1d5db;border-radius:12px;padding:12px;font:inherit;resize:vertical;background:#fff}
+input[type="text"]{width:100%;border:1px solid #d1d5db;border-radius:10px;padding:10px;font:inherit}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.complete{margin-top:16px}
+.check{font-size:13px;color:var(--muted)}
+.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.node{padding:9px 11px;border:1px solid var(--line);background:#f9fafb;border-radius:10px}
+.arrow{color:#9ca3af}
+.state{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+small{color:var(--muted)}
+@media(max-width:780px){
+  .shell{grid-template-columns:1fr}
+  .sidebar{position:relative;height:auto}
+  .main{padding:20px}
+  .menu,.state{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">資本主義を説明できるようになる</div>
+    <div class="sub">Day 1–3 e-learning</div>
+    <div class="nav">
+      <button data-page="home" class="active">Home</button>
+      <button data-page="day0">Day 0｜Before</button>
+      <button data-page="day1">Day 1｜資本主義とは何か</button>
+      <button data-page="day2">Day 2｜市場 ≠ 資本主義</button>
+      <button data-page="day3">Day 3｜システムとして理解</button>
+      <button data-page="review">Review｜Before → After</button>
+    </div>
+    <div class="progressbox">
+      <div>進捗 <span id="progressText">0 / 4</span></div>
+      <div class="bar"><div id="progressBar"></div></div>
+      <div>完了条件：Day 1–3 + Review</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="eyebrow">Learning path</div>
+        <h1>Day 1–3｜資本主義の骨格を作る</h1>
+        <p>この3日間では、歴史や格差論へ広げず、まず「資本主義とは何か」を説明できる骨格を作ります。</p>
+      </div>
+      <div class="card">
+        <h2>学習の流れ</h2>
+        <div class="menu">
+          <div class="item"><b>Day 1</b><br>資本主義を制度の組み合わせとして捉える</div>
+          <div class="item"><b>Day 2</b><br>市場経済と資本主義を区別する</div>
+          <div class="item"><b>Day 3</b><br>企業・資本・労働・市場・国家をつなぐ</div>
+          <div class="item"><b>Review</b><br>Day 0 の Before と After を比較する</div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>CORE Econ Unit 1｜今回の学習対象</h2>
+        <p>Unit 1を通読するのではなく、Day 1〜3では次の範囲に絞ります。</p>
+        <table style="width:100%;border-collapse:collapse">
+          <tr>
+            <th style="border:1px solid #e5e7eb;padding:8px;text-align:left">Day</th>
+            <th style="border:1px solid #e5e7eb;padding:8px;text-align:left">必須チャプター</th>
+            <th style="border:1px solid #e5e7eb;padding:8px;text-align:left">狙い</th>
+          </tr>
+          <tr>
+            <td style="border:1px solid #e5e7eb;padding:8px">Day 1</td>
+            <td style="border:1px solid #e5e7eb;padding:8px"><b>1.6 Capitalism defined: Private property, markets, and firms</b></td>
+            <td style="border:1px solid #e5e7eb;padding:8px">資本主義の定義と、私有財産・市場・企業の意味を押さえる</td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #e5e7eb;padding:8px">Day 2</td>
+            <td style="border:1px solid #e5e7eb;padding:8px"><b>1.7 Capitalism as an economic system</b><br><small>必要に応じて1.6の「Markets」「Firm」を再読</small></td>
+            <td style="border:1px solid #e5e7eb;padding:8px">市場があるだけでは資本主義ではないことを理解する</td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #e5e7eb;padding:8px">Day 3</td>
+            <td style="border:1px solid #e5e7eb;padding:8px"><b>1.10 Varieties of capitalism: Institutions, government, and the economy</b><br><small>あわせて1.6「Firm」「Defining capitalism precisely」を復習</small></td>
+            <td style="border:1px solid #e5e7eb;padding:8px">国家・制度が資本主義の中で果たす役割を整理する</td>
+          </tr>
+        </table>
+        <p><small>今回は1.8（specialization）と1.9（causation）は対象外です。成長メカニズムや歴史の因果を扱う段階で戻ります。</small></p>
+      </div>
+
+      <div class="card">
+        <h2>使い方</h2>
+        <ol>
+          <li>その日の「今日の問い」を先に考える</li>
+          <li>教材を読む</li>
+          <li>理解チェックに答える</li>
+          <li>最後に自分の言葉で説明する</li>
+          <li>完了ボタンを押す</li>
+        </ol>
+        <p><small>回答はこのブラウザの localStorage に保存されます。</small></p>
+      </div>
+    </section>
+
+    <section id="day0" class="page">
+      <div class="hero">
+        <div class="eyebrow">Before snapshot</div>
+        <h1>Day 0｜学習前メンタルモデル</h1>
+        <p>評価や訂正は入れず、学習開始時点の理解を残したものです。</p>
+      </div>
+      <div class="card">
+        <h2>資本主義とは何か</h2>
+        <ul>
+          <li>自由競争を前提として、企業が利潤・利益を追求しながら経済活動を行う仕組み。</li>
+          <li>それによって社会が形成されている。</li>
+          <li>経済の仕組みだけなのか、国家の仕組みまで含むのかは曖昧。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>現時点で曖昧なところ</h2>
+        <ul>
+          <li>資本主義の正確な定義</li>
+          <li>資本主義がいつ・どこで成立したのか</li>
+          <li>なぜ世界に広がったのか</li>
+          <li>国家と資本主義の関係</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="day1" class="page">
+      <div class="hero">
+        <div class="eyebrow">Day 1</div>
+        <h1>資本主義を「制度の組み合わせ」として捉える</h1>
+        <p><span class="badge">目安 25–35分</span></p>
+      </div>
+
+      <div class="card goal">
+        <h2>今日のゴール</h2>
+        <p><b>「資本主義とは何か？」を、自由競争だけに頼らず2分程度で説明できる。</b></p>
+      </div>
+
+      <div class="card">
+        <h2>Beforeの仮説</h2>
+        <div class="quote">「資本主義とは、自由競争をもとに企業が利益を追求する仕組みではないか」</div>
+        <p>この説明だけで十分か、教材を読む前に一度考えてください。</p>
+      </div>
+
+      <div class="card">
+        <h2>今日のメニュー</h2>
+        <div class="menu">
+          <div class="item">1. 最初の問い<br><small>3分</small></div>
+          <div class="item">2. CORE Econ を読む<br><small>10–15分</small></div>
+          <div class="item">3. 理解チェック<br><small>5分</small></div>
+          <div class="item">4. 自分の言葉で説明<br><small>5–10分</small></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>インプット｜学習対象を明確にする</h2>
+        <p><b>CORE Econ『The Economy』Unit 1</b></p>
+        <div class="quote">
+          <b>必須：1.6 “Capitalism defined: Private property, markets, and firms” 全体</b><br>
+          本文中の「Private property」「Markets」「Firm」「Defining capitalism precisely」を読む。<br>
+          <small>Question 1.5 / 1.6、Exercise 1.6〜1.8 は余力があれば。まず本文理解を優先。</small>
+        </div>
+        <p><a class="cta secondary" target="_blank" rel="noopener" href="https://books.core-econ.org/the-economy-v1/book/text/01.html">Unit 1 を開く</a></p>
+        <p><small>開いたらページ内検索（Ctrl+F / ⌘F）で「1.6 Capitalism defined」を探してください。</small></p>
+        <p><b>読むときの問い</b></p>
+        <ul>
+          <li>資本主義を成立させる制度は何か</li>
+          <li>「企業」は単なる商売人と何が違うのか</li>
+          <li>「資本」は単なるお金なのか</li>
+          <li>利潤はどこから生まれ、何に使われるのか</li>
+          <li>自由競争や政府非介入は定義上必須なのか</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>理解チェック</h2>
+        <div class="quiz" data-quiz="day1">
+          <div class="quizq" data-answer="B">
+            <h3>Q1. この学習でまず区別して理解する対象として最も適切なのは？</h3>
+            <div class="options">
+              <label><input type="radio" name="d1q1" value="A"> 王政と民主政</label>
+              <label><input type="radio" name="d1q1" value="B"> 市場・私有財産・企業などの制度要素</label>
+              <label><input type="radio" name="d1q1" value="C"> 株価と為替</label>
+              <label><input type="radio" name="d1q1" value="D"> GDPと人口</label>
+            </div>
+          </div>
+          <div class="quizq" data-answer="C">
+            <h3>Q2. Day 1 の目的に最も合う説明はどれ？</h3>
+            <div class="options">
+              <label><input type="radio" name="d1q2" value="A"> 資本主義は国が介入しない状態そのもの</label>
+              <label><input type="radio" name="d1q2" value="B"> 資本主義は市場が存在すれば成立する</label>
+              <label><input type="radio" name="d1q2" value="C"> 資本主義を複数の制度要素の関係として捉える</label>
+              <label><input type="radio" name="d1q2" value="D"> 資本主義は株式会社の有無だけで決まる</label>
+            </div>
+          </div>
+          <div class="quizq" data-answer="A">
+            <h3>Q3. 今日の学習で「資本」を確認する理由として最も適切なのは？</h3>
+            <div class="options">
+              <label><input type="radio" name="d1q3" value="A"> 企業・生産・利潤・再投資の関係を説明するため</label>
+              <label><input type="radio" name="d1q3" value="B"> 王政の年代を覚えるため</label>
+              <label><input type="radio" name="d1q3" value="C"> 選挙制度を理解するため</label>
+              <label><input type="radio" name="d1q3" value="D"> 国際法を理解するため</label>
+            </div>
+          </div>
+          <button class="cta quiz-check">採点する</button>
+          <div class="feedback"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>自分の言葉で説明</h2>
+        <p>「資本主義とは何ですか？」を3〜5文で説明してください。</p>
+        <textarea id="d1out" data-save="d1out" placeholder="ここに自分の言葉で書く"></textarea>
+        <div class="complete"><button class="cta complete-btn" data-complete="day1">Day 1 を完了</button> <span class="check" id="day1state"></span></div>
+      </div>
+    </section>
+
+    <section id="day2" class="page">
+      <div class="hero">
+        <div class="eyebrow">Day 2</div>
+        <h1>市場経済と資本主義を区別する</h1>
+        <p><span class="badge">目安 25–35分</span></p>
+      </div>
+
+      <div class="card goal">
+        <h2>今日のゴール</h2>
+        <p><b>「市場があること」と「資本主義であること」が違う理由を説明できる。</b></p>
+      </div>
+
+      <div class="card">
+        <h2>最初の問い</h2>
+        <p><b>ある村で、農家が自分で作った野菜を市場で売買しています。市場が存在するので、この社会は必ず資本主義でしょうか？</b></p>
+        <div class="row">
+          <label><input type="radio" name="pre2" value="yes"> Yes</label>
+          <label><input type="radio" name="pre2" value="no"> No</label>
+          <label><input type="radio" name="pre2" value="unknown"> 分からない</label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>インプット｜学習対象を明確にする</h2>
+        <p><b>CORE Econ『The Economy』Unit 1</b></p>
+        <div class="quote">
+          <b>必須：1.7 “Capitalism as an economic system” 全体</b><br>
+          とくに Figure 1.8 周辺の「private property → markets → firms」の関係と、賃労働による生産の説明を読む。<br>
+          <b>再読：</b>1.6 の「Markets」「Firm」（市場だけでは資本主義を定義できない理由を確認）。
+        </div>
+        <p><a class="cta secondary" target="_blank" rel="noopener" href="https://books.core-econ.org/the-economy-v1/book/text/01.html">Unit 1 を開く</a></p>
+        <p><small>ページ内検索で「1.7 Capitalism as an economic system」を探してください。</small></p>
+        <ul>
+          <li>市場と資本主義は同じ概念なのか</li>
+          <li>市場だけでは足りないとすれば、何が必要なのか</li>
+          <li>家族中心の生産と、企業中心の生産では何が違うか</li>
+          <li>賃労働はどこに位置づくか</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>比較して考える</h2>
+        <table style="width:100%;border-collapse:collapse">
+          <tr><th style="border:1px solid #e5e7eb;padding:8px"></th><th style="border:1px solid #e5e7eb;padding:8px">市場</th><th style="border:1px solid #e5e7eb;padding:8px">私有財産</th><th style="border:1px solid #e5e7eb;padding:8px">企業・賃労働</th></tr>
+          <tr><td style="border:1px solid #e5e7eb;padding:8px">市場のある社会</td><td style="border:1px solid #e5e7eb;padding:8px">○</td><td style="border:1px solid #e5e7eb;padding:8px">あり得る</td><td style="border:1px solid #e5e7eb;padding:8px">必須とは限らない</td></tr>
+          <tr><td style="border:1px solid #e5e7eb;padding:8px">資本主義</td><td style="border:1px solid #e5e7eb;padding:8px">○</td><td style="border:1px solid #e5e7eb;padding:8px">中核</td><td style="border:1px solid #e5e7eb;padding:8px">中核</td></tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>理解チェック</h2>
+        <div class="quiz" data-quiz="day2">
+          <div class="quizq" data-answer="B">
+            <h3>Q1. Day 2 の中心テーマは？</h3>
+            <div class="options">
+              <label><input type="radio" name="d2q1" value="A"> 市場があれば必ず資本主義である</label>
+              <label><input type="radio" name="d2q1" value="B"> 市場と資本主義を区別して考える</label>
+              <label><input type="radio" name="d2q1" value="C"> 王政と市場を同一視する</label>
+              <label><input type="radio" name="d2q1" value="D"> 企業を国家機関として理解する</label>
+            </div>
+          </div>
+          <div class="quizq" data-answer="D">
+            <h3>Q2. 「市場がある社会」と「資本主義」の差を考えるうえで重要な観点は？</h3>
+            <div class="options">
+              <label><input type="radio" name="d2q2" value="A"> 天候</label>
+              <label><input type="radio" name="d2q2" value="B"> 国土面積</label>
+              <label><input type="radio" name="d2q2" value="C"> 通貨単位</label>
+              <label><input type="radio" name="d2q2" value="D"> 企業・賃労働・資本の関係</label>
+            </div>
+          </div>
+          <div class="quizq" data-answer="A">
+            <h3>Q3. 学習計画上、Day 2 でまず避けるべき進め方は？</h3>
+            <div class="options">
+              <label><input type="radio" name="d2q3" value="A"> 格差論や歴史へすぐ広げる</label>
+              <label><input type="radio" name="d2q3" value="B"> 市場と企業の違いを考える</label>
+              <label><input type="radio" name="d2q3" value="C"> 賃労働の位置づけを確認する</label>
+              <label><input type="radio" name="d2q3" value="D"> 教材を読みながら問いを持つ</label>
+            </div>
+          </div>
+          <button class="cta quiz-check">採点する</button>
+          <div class="feedback"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>自分の言葉で説明</h2>
+        <p>「市場経済と資本主義は何が違いますか？」。「市場」と「企業」という語を必ず使って説明してください。</p>
+        <textarea id="d2out" data-save="d2out" placeholder="ここに自分の言葉で書く"></textarea>
+        <div class="complete"><button class="cta complete-btn" data-complete="day2">Day 2 を完了</button> <span class="check" id="day2state"></span></div>
+      </div>
+    </section>
+
+    <section id="day3" class="page">
+      <div class="hero">
+        <div class="eyebrow">Day 3</div>
+        <h1>企業・資本・労働・市場・国家をつなぐ</h1>
+        <p><span class="badge">目安 30–40分</span></p>
+      </div>
+
+      <div class="card goal">
+        <h2>今日のゴール</h2>
+        <p><b>資本主義を、個々の用語ではなく一つのシステムとして説明できる。</b></p>
+      </div>
+
+      <div class="card">
+        <h2>最初に並びを考える</h2>
+        <div class="flow">
+          <div class="node">資本を投じる</div><div class="arrow">→</div>
+          <div class="node">労働者を雇う</div><div class="arrow">→</div>
+          <div class="node">生産する</div><div class="arrow">→</div>
+          <div class="node">市場で販売</div><div class="arrow">→</div>
+          <div class="node">利潤</div><div class="arrow">→</div>
+          <div class="node">再投資</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>インプット｜学習対象を明確にする</h2>
+        <p><b>CORE Econ『The Economy』Unit 1</b></p>
+        <div class="quote">
+          <b>必須：1.10 “Varieties of capitalism: Institutions, government, and the economy”</b><br>
+          とくに「When is capitalism dynamic?」以降の、財産権・契約・競争・公共政策と政府の役割を読む。<br>
+          <b>復習：</b>1.6 の「Firm」「Defining capitalism precisely」。企業・労働・利潤と、政府介入の程度が国ごとに異なる点を再確認。
+        </div>
+        <p><a class="cta secondary" target="_blank" rel="noopener" href="https://books.core-econ.org/the-economy-v1/book/text/01.html">Unit 1 を開く</a></p>
+        <p><small>ページ内検索で「1.10 Varieties of capitalism」を探してください。1.8・1.9は今回の必須範囲ではありません。</small></p>
+        <ul>
+          <li>企業の内部で何が起きているか</li>
+          <li>企業は市場とどう接続しているか</li>
+          <li>国家は財産権・契約・企業制度・労働制度・規制・税などとどう関わるか</li>
+          <li>「国が介入しないこと」は資本主義の定義に必要か</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>システム図</h2>
+        <div class="flow">
+          <div class="node">資本</div><div class="arrow">→</div>
+          <div class="node">企業</div><div class="arrow">→</div>
+          <div class="node">雇用</div><div class="arrow">→</div>
+          <div class="node">労働</div><div class="arrow">→</div>
+          <div class="node">生産</div><div class="arrow">→</div>
+          <div class="node">市場</div><div class="arrow">→</div>
+          <div class="node">売上・利潤</div><div class="arrow">→</div>
+          <div class="node">再投資</div>
+        </div>
+        <p style="margin-top:16px"><b>外側：</b> 国家が制度・ルール・税・規制などを通じて関与する。</p>
+      </div>
+
+      <div class="card">
+        <h2>理解チェック</h2>
+        <div class="quiz" data-quiz="day3">
+          <div class="quizq" data-answer="C">
+            <h3>Q1. Day 3 の最終目標は？</h3>
+            <div class="options">
+              <label><input type="radio" name="d3q1" value="A"> 用語を個別暗記する</label>
+              <label><input type="radio" name="d3q1" value="B"> 年号を覚える</label>
+              <label><input type="radio" name="d3q1" value="C"> 各要素を一つのシステムとして説明する</label>
+              <label><input type="radio" name="d3q1" value="D"> 思想家を比較する</label>
+            </div>
+          </div>
+          <div class="quizq" data-answer="B">
+            <h3>Q2. 「資本 → 企業 → 雇用 → 生産 → 市場 → 利潤」の後に続く重要な要素は？</h3>
+            <div class="options">
+              <label><input type="radio" name="d3q2" value="A"> 王政</label>
+              <label><input type="radio" name="d3q2" value="B"> 再投資</label>
+              <label><input type="radio" name="d3q2" value="C"> 選挙</label>
+              <label><input type="radio" name="d3q2" value="D"> 国境</label>
+            </div>
+          </div>
+          <div class="quizq" data-answer="D">
+            <h3>Q3. 国家についてこの3日間で検証する仮説は？</h3>
+            <div class="options">
+              <label><input type="radio" name="d3q3" value="A"> 国家は市場と無関係である</label>
+              <label><input type="radio" name="d3q3" value="B"> 国家は企業そのものである</label>
+              <label><input type="radio" name="d3q3" value="C"> 国家は労働者だけを管理する</label>
+              <label><input type="radio" name="d3q3" value="D"> 国家介入の少なさは資本主義の定義に必須なのか</label>
+            </div>
+          </div>
+          <button class="cta quiz-check">採点する</button>
+          <div class="feedback"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>最終アウトプット</h2>
+        <p>「企業・資本・労働・市場・国家がどのようにつながって、資本主義というシステムを構成しているのか」を説明してください。</p>
+        <textarea id="d3out" data-save="d3out" placeholder="ここに自分の言葉で書く"></textarea>
+        <div class="complete"><button class="cta complete-btn" data-complete="day3">Day 3 を完了</button> <span class="check" id="day3state"></span></div>
+      </div>
+    </section>
+
+    <section id="review" class="page">
+      <div class="hero">
+        <div class="eyebrow">Review</div>
+        <h1>Before → After</h1>
+        <p>Day 0 と比較して、自分のメンタルモデルがどう変わったかを確認します。</p>
+      </div>
+
+      <div class="card">
+        <div class="state">
+          <div>
+            <h2>Before</h2>
+            <div class="quote">「自由競争を前提として、企業が利潤・利益を追求しながら経済活動を行う仕組み」</div>
+          </div>
+          <div>
+            <h2>After</h2>
+            <textarea id="after1" data-save="after1" placeholder="今なら、資本主義とは何だと説明しますか？"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>3つの確認</h2>
+        <p><b>1. 資本主義とは何か</b></p>
+        <textarea data-save="rev1" placeholder="自分の言葉で説明"></textarea>
+        <p><b>2. 市場経済と資本主義は何が違うか</b></p>
+        <textarea data-save="rev2" placeholder="自分の言葉で説明"></textarea>
+        <p><b>3. 国家は資本主義とどんな関係にあるか</b></p>
+        <textarea data-save="rev3" placeholder="自分の言葉で説明"></textarea>
+      </div>
+
+      <div class="card">
+        <h2>メンタルモデル差分</h2>
+        <p>今回変わったことを1〜3行で書いてください。</p>
+        <textarea data-save="diff" placeholder="Before → After で何が変わったか"></textarea>
+        <div class="complete"><button class="cta complete-btn" data-complete="review">Review を完了</button> <span class="check" id="reviewstate"></span></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+const pages=[...document.querySelectorAll('.page')];
+const nav=[...document.querySelectorAll('.nav button')];
+
+function showPage(id){
+  pages.forEach(p=>p.classList.toggle('active',p.id===id));
+  nav.forEach(b=>b.classList.toggle('active',b.dataset.page===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+  localStorage.setItem('cap:lastPage',id);
+}
+nav.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+
+document.querySelectorAll('[data-save]').forEach(el=>{
+  const key='cap:'+el.dataset.save;
+  el.value=localStorage.getItem(key)||'';
+  el.addEventListener('input',()=>localStorage.setItem(key,el.value));
+});
+
+document.querySelectorAll('.quiz-check').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const quiz=btn.closest('.quiz');
+    const qs=[...quiz.querySelectorAll('.quizq')];
+    let correct=0, answered=0;
+    qs.forEach(q=>{
+      const chosen=q.querySelector('input[type=radio]:checked');
+      if(chosen){answered++; if(chosen.value===q.dataset.answer) correct++;}
+    });
+    const fb=quiz.querySelector('.feedback');
+    if(answered<qs.length){
+      fb.className='feedback wrong';
+      fb.textContent=`未回答があります（${answered}/${qs.length}問回答）。`;
+    }else{
+      fb.className='feedback '+(correct===qs.length?'correct':'');
+      fb.textContent=`${correct}/${qs.length} 問正解。点数より、間違えた問いを教材に戻って説明できるかを確認してください。`;
+    }
+  });
+});
+
+function updateProgress(){
+  const keys=['day1','day2','day3','review'];
+  const done=keys.filter(k=>localStorage.getItem('cap:complete:'+k)==='1');
+  document.getElementById('progressText').textContent=`${done.length} / 4`;
+  document.getElementById('progressBar').style.width=`${done.length/4*100}%`;
+  keys.forEach(k=>{
+    const el=document.getElementById(k+'state');
+    if(el) el.textContent=done.includes(k)?'完了済み':'';
+  });
+}
+document.querySelectorAll('.complete-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const k=btn.dataset.complete;
+    localStorage.setItem('cap:complete:'+k,'1');
+    updateProgress();
+    btn.textContent='完了済み';
+  });
+});
+updateProgress();
+
+const last=localStorage.getItem('cap:lastPage');
+if(last && document.getElementById(last)) showPage(last);
+</script>
+</body>
+</html>
