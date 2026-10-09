@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#183049">
+<title>Q02｜資本主義の成立を探る</title>
+<style>
+:root{--bg:#f3f6f9;--ink:#183049;--dim:#627489;--line:#dce5ed;--teal:#13796e;--light:#e8f3f1}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;line-height:1.7}button,textarea{font:inherit}a{color:#1b5d94}button{cursor:pointer}button:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #8cbddd;outline-offset:2px}
+header{background:var(--ink);color:#fff;padding:15px 20px}header .wrap{max-width:860px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px}header a{color:#d8e7f5;font-size:13px}
+main{max-width:860px;padding:26px 16px 80px;margin:auto}h1{font-size:clamp(28px,5vw,38px);line-height:1.3;margin:10px 0}h2{font-size:21px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}.eyebrow{font-size:12px;color:var(--teal);font-weight:800;letter-spacing:.1em}.lead{color:#415a6d}.card{background:#fff;border:1px solid var(--line);padding:24px;border-radius:16px;margin:19px 0;box-shadow:0 6px 21px #26384b09}.steps{display:flex;gap:8px;overflow-x:auto;margin:20px 0}.steps button{border:1px solid var(--line);background:#fff;border-radius:22px;padding:10px 14px;white-space:nowrap;color:var(--ink)}.steps button.active{background:var(--ink);border-color:var(--ink);color:#fff}.pane{display:none}.pane.active{display:block}.pill{display:inline-block;font-size:12px;background:var(--light);color:var(--teal);padding:4px 9px;border-radius:20px}.btn{padding:10px 16px;background:var(--ink);color:#fff;border:1px solid var(--ink);border-radius:10px}.btn.alt{background:#fff;color:var(--ink)}.row{display:flex;align-items:center;flex-wrap:wrap;gap:10px}.chart{padding:18px 14px;background:#f5f8fb;border:1px solid #cbdce9;border-radius:12px;margin:16px 0}.nodes{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:9px}.node{display:inline-block;background:white;border:1px solid #b4cedb;padding:10px 12px;border-radius:10px;font-weight:650;font-size:13px}.arrow{color:#57899a}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}.timeline button{padding:15px 10px;background:#eef3f8;border:1px solid #cbdae6;border-radius:13px;text-align:left;color:var(--ink);min-height:90px}.timeline button.active{background:var(--light);border-color:var(--teal)}.timeline button strong{display:block}.timeline button small{color:var(--dim)}.compare{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.compare button{padding:15px;border:1px solid #c4d6e2;background:#fff;border-radius:12px;text-align:left;color:var(--ink)}.compare button.active{background:var(--light);border-color:var(--teal)}.compare small{display:block;color:var(--dim)}.info{padding:16px;background:#eef6f7;border:1px solid #c9dfe0;border-radius:12px}.info strong{display:block;margin-bottom:7px}.prompt{padding:18px;border-left:4px solid var(--teal);background:var(--light);font-weight:700;border-radius:8px}textarea{width:100%;min-height:110px;border-radius:10px;border:1px solid #bfcddb;padding:12px;resize:vertical;margin:7px 0 16px}label{font-weight:650}details{border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin:13px 0}summary{cursor:pointer;font-weight:680}.hint{font-size:13px;color:var(--dim)}.readout{font-size:14px;color:var(--teal)}.review{background:#eef6f5;border-radius:12px;border:1px solid #c6ddd9;padding:16px;margin:12px 0}audio{width:100%;margin:10px 0}.line{height:6px;background:#d5e2e9;border-radius:20px;overflow:hidden}.line div{height:100%;background:var(--teal);width:20%}footer{margin-top:30px;font-size:12px;color:var(--dim)}
+@media(max-width:700px){.timeline{grid-template-columns:repeat(2,1fr)}.compare{grid-template-columns:1fr}.card{padding:18px}header{padding:14px 16px}}
+</style></head><body>
+<header><div class="wrap"><b>資本主義の変化を学ぶ / Q02</b><a href="./">6つの問いへ戻る ↗</a></div></header>
+<main>
+<div class="eyebrow">MULTIMODAL LEARNING LAB</div><h1>なぜ資本主義は成立し、世界へ広がったのか？</h1>
+<p class="lead">図を操作する・音声を聞く・根拠を比べる・自分の言葉で説明する。文章の通読ではなく、歴史的な因果を理解するための学習ページです。</p>
+<div class="line"><div id="line"></div></div><div class="steps" aria-label="学習ステップ"><button data-step="0" class="active">1 まず予想</button><button data-step="1">2 歴史を動かす</button><button data-step="2">3 原因を比較</button><button data-step="3">4 説明する</button><button data-step="4">5 再び思い出す</button></div>
+<section class="pane active" data-pane="0"><div class="card"><span class="pill">予想 → 検証</span><h2>始める前に考える</h2><p>産業革命が18世紀後半のイギリスで始まったのはなぜでしょうか。資料を見る前の仮説を書いてください。</p>
+<label for="guess">最初の仮説</label><textarea id="guess" placeholder="例えば、技術が進んだこと以外に、なぜイギリスだったのか……"></textarea>
+<button data-next="1" class="btn">歴史を見て確かめる →</button></div></section>
+<section class="pane" data-pane="1"><div class="card"><span class="pill">図 ＋ 必要に応じた音声</span><h2>歴史の流れを追う</h2><p>時代を選ぶと、社会や経済の変化を表示します。文章を読む代わりに、選択した部分だけ音声で聞くこともできます。</p>
+<div class="timeline" id="timeline"><button data-era="0" class="active"><strong>1500〜1600年代</strong><small>商業化と貿易</small></button><button data-era="1"><strong>1700年代</strong><small>生産条件の違い</small></button><button data-era="2"><strong>18世紀後半</strong><small>産業革命の始まり</small></button><button data-era="3"><strong>1800年代〜</strong><small>産業化が広がる</small></button></div>
+<div class="info" id="eraText" aria-live="polite"></div><div class="chart"><div id="eraNodes" class="nodes"></div></div>
+<div class="row"><button id="speak" class="btn alt">▶ 音声で解説</button><button id="stopSpeak" class="btn alt">■ 停止</button></div>
+<p class="hint">端末の音声合成を利用します。ブラウザによっては日本語音声が利用できない場合があります。</p>
+<details><summary>歴史の根拠を読む（必要な場合）</summary>
+<p><a href="https://openstax.org/books/world-history-volume-2/pages/6-2-the-rise-of-a-global-economy" target="_blank" rel="noopener noreferrer">OpenStax：世界経済の拡大 ↗</a></p>
+<p><a href="https://openstax.org/books/world-history-volume-2/pages/6-3-capitalism-and-the-first-industrial-revolution" target="_blank" rel="noopener noreferrer">OpenStax：資本主義と産業革命 ↗</a></p></details>
+<button data-next="2" class="btn">原因を比較する →</button></div></section>
+<section class="pane" data-pane="2"><div class="card"><span class="pill">比較 ＋ 因果推論</span><h2>原因は一つなのか？</h2><p>気になる原因を選んで「何を説明できるか」と「説明できないこと」を比べてください。</p>
+<div id="hypotheses" class="compare"><button data-hyp="0" class="active"><strong>技術革新</strong><small>何が可能になったか</small></button><button data-hyp="1"><strong>賃金・石炭</strong><small>なぜ機械化が魅力的か</small></button><button data-hyp="2"><strong>制度・金融</strong><small>なぜ投資できたか</small></button><button data-hyp="3"><strong>貿易・植民地</strong><small>市場と原材料のつながり</small></button></div>
+<div class="info" id="hypText" aria-live="polite"></div>
+<div class="chart"><p class="hint">仮説の整理図（歴史的因果関係を確定するモデルではありません）</p>
+<div class="nodes"><span class="node">複数の背景条件</span><span class="arrow">→</span><span class="node">投資・技術選択</span><span class="arrow">→</span><span class="node">工場制生産</span><span class="arrow">→</span><span class="node">産業化の拡大</span></div></div>
+<details><summary>もう少し調べる：CORE Econ</summary><p><a href="https://books.core-econ.org/the-economy-v1/book/text/02.html" target="_blank" rel="noopener noreferrer">Unit 2：技術選択と産業革命 ↗</a></p><p>相対賃金とエネルギー価格による説明は有力な仮説の一つです。他の要因や地域差も検討してください。</p></details>
+<button data-next="3" class="btn">教材を閉じて説明 →</button></div></section>
+<section class="pane" data-pane="3"><div class="card"><span class="pill">能動的な想起</span><h2>自分の言葉で説明する</h2><p>図を見ずに90秒〜3分ほど説明します。資本主義の成立と産業革命は同じ出来事ではないことにも注意してください。</p>
+<div class="prompt">なぜイギリスで産業革命が起こったのか？ 資本主義の拡大とどう関係するのか？ 別の説明はあるか？</div>
+<h3>声で説明する</h3><p>ChatGPTの音声会話、またはこのブラウザの録音機能で説明を試せます。</p>
+<div class="row"><button class="btn alt" id="record">● 録音する</button><button class="btn alt" id="stopRecord" disabled>■ 停止</button><a target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/">ChatGPT音声会話 ↗</a></div>
+<p class="hint" id="recordStatus" role="status">録音は端末内で一時的に再生するためのものです。サイトにはアップロードしません。</p><audio id="playback" controls hidden></audio>
+<h3>説明した内容を記録する</h3><label for="explanation">説明の要点・分からなかった点</label><textarea id="explanation"></textarea>
+<details><summary>説明した後で開く：確認ポイント</summary><p>① 資本主義と産業革命を区別したか。② 2つ以上の原因を因果で結んだか。③ 反証・代替説明を挙げたか。</p></details>
+<label for="revision">学習前の予想と比べ、何が変わったか</label><textarea id="revision"></textarea>
+<div class="row"><button id="save" class="btn">説明内容を保存</button><button data-next="4" class="btn alt">後日の復習へ →</button></div><p id="saved" class="readout" role="status"></p></div></section>
+<section class="pane" data-pane="4"><div class="card"><span class="pill">間隔を空けた想起</span><h2>数日後に、もう一度</h2><p>目安として1日・3日・7日後に同じ問いを説明します。最適間隔は固定ではなく、この日数は運用上の仮置きです。</p><div id="schedule" class="review" role="status"></div>
+<div class="prompt">産業革命はなぜイギリスで起きたのか？ 別の条件・別の地域でも同じことが起こっただろうか？</div>
+<p><button id="recalled" class="btn">資料なしで説明したことを記録</button></p><p id="reviewStatus" class="readout" role="status"></p>
+<p><button id="export" class="btn alt">学習メモをJSONで書き出す</button></p>
+<p class="hint">復習日はページを開いたときに確認できます。プッシュ通知や端末間同期はありません。保存データはブラウザ削除で失われます。</p></div></section>
+<footer>このページは問いを理解するための学習補助です。図は単純化しており、各原因の歴史的重要性には議論があります。</footer></main>
+<script>
+(()=>{"use strict";
+const eras=[
+["商業化と世界的な貿易の拡大","1500〜1600年代に欧州を中心とした長距離貿易が拡大しました。ただし交易と市場はそれ以前から存在しています。商業化は資本主義の発展に関連しますが、それだけで成立を説明することはできません。",["交易","商業組織","資金調達"]],
+["労働・資源・制度の条件","18世紀のイギリスでは労働コストと石炭の利用条件、制度や商業活動などが技術を採用する経済的な判断に関わりました。どの要因が重要だったかには複数の説があります。",["賃金・資源","技術の採算性","投資"]],
+["技術と工場制生産の広がり","18世紀後半からのイギリスで、紡績機械や蒸気機関の改良と普及などによって工場制生産が発展しました。資本主義そのものの成立を産業革命の開始と同一視しないことが重要です。",["機械化","工場制生産","産業化"]],
+["他地域への拡大と違い","19世紀以降、産業化は欧州や北米などへ広がりましたが、国と地域によって経路は異なります。国際市場の拡大には植民地支配や不平等な関係も伴いました。",["産業化の普及","国際市場","多様な制度"]]
+];
+const hyps=[
+["技術革新","新しい機械や製法は生産の方法を変えました。","ただし、発明だけでは、なぜイギリスで投資・普及したのかを十分説明できません。"],
+["賃金・石炭","高い相対賃金や利用しやすいエネルギーが、省力化技術を魅力的にしたという説があります。","重要な経済史上の仮説ですが、時代・地域・産業差を伴い、唯一の説明ではありません。"],
+["制度・金融","財産権・契約・金融・企業組織などは事業への投資に関わります。","制度があるだけでは技術導入の時期や場所は特定できません。"],
+["貿易・植民地","市場の拡大、原材料、帝国と植民地の関係が産業化に影響したという研究があります。","寄与の大きさや必要条件だったかについては議論があります。"]
+];
+const $=id=>document.getElementById(id),key="capitalism-q02-lab-v1";let state={};try{state=JSON.parse(localStorage.getItem(key))||{}}catch{}
+const persist=()=>{try{localStorage.setItem(key,JSON.stringify(state));return true}catch{return false}};
+let era=0,hyp=0,recorder=null,stream=null,parts=[],recordUrl=null;
+function stopSpeech(){if("speechSynthesis" in window)window.speechSynthesis.cancel()}
+function show(n){document.querySelectorAll("[data-pane]").forEach(p=>p.classList.toggle("active",Number(p.dataset.pane)===n));document.querySelectorAll("[data-step]").forEach(b=>b.classList.toggle("active",Number(b.dataset.step)===n));$("line").style.width=(n+1)*20+"%";stopSpeech();if(n===4)review();window.scrollTo(0,0)}
+function eraRender(){document.querySelectorAll("[data-era]").forEach(b=>b.classList.toggle("active",Number(b.dataset.era)===era));$("eraText").replaceChildren();const h=document.createElement("strong");h.textContent=eras[era][0];const p=document.createElement("p");p.textContent=eras[era][1];$("eraText").append(h,p);$("eraNodes").replaceChildren();eras[era][2].forEach((s,i)=>{if(i){const arrow=document.createElement("span");arrow.className="arrow";arrow.textContent="→";$("eraNodes").append(arrow)}const node=document.createElement("span");node.className="node";node.textContent=s;$("eraNodes").append(node)})}
+function hypRender(){document.querySelectorAll("[data-hyp]").forEach(b=>b.classList.toggle("active",Number(b.dataset.hyp)===hyp));$("hypText").replaceChildren();const h=document.createElement("strong");h.textContent=hyps[hyp][0];const p=document.createElement("p");p.textContent=hyps[hyp][1];const limit=document.createElement("p");limit.textContent="説明の限界："+hyps[hyp][2];$("hypText").append(h,p,limit)}
+function review(){const base=state.savedAt?new Date(state.savedAt):null;const done=state.reviewed||[];$("schedule").replaceChildren();const intro=document.createElement("p");intro.textContent=base?"説明を保存した日からの復習目安：":"説明を保存すると復習目安日が表示されます。";$("schedule").append(intro);if(!base)return;[1,3,7].forEach((days,i)=>{const d=new Date(base);d.setDate(d.getDate()+days);const p=document.createElement("p");p.textContent=(i+1)+"回目："+d.toLocaleDateString("ja-JP",{month:"long",day:"numeric"})+(done.length>i?" ✓実施済み":d<=new Date()?"（復習の時期）":"（予定）");$("schedule").append(p)})}
+$("guess").value=state.guess||"";$("explanation").value=state.explanation||"";$("revision").value=state.revision||"";
+document.addEventListener("click",e=>{const b=e.target.closest("[data-step],[data-next],[data-era],[data-hyp]");if(!b)return;if(b.dataset.step!==undefined)show(Number(b.dataset.step));else if(b.dataset.next!==undefined){if(b.dataset.next==="1"){state.guess=$("guess").value;persist()}show(Number(b.dataset.next))}else if(b.dataset.era!==undefined){era=Number(b.dataset.era);stopSpeech();eraRender()}else if(b.dataset.hyp!==undefined){hyp=Number(b.dataset.hyp);hypRender()}});
+$("speak").onclick=()=>{if(!("speechSynthesis" in window)){alert("ブラウザが音声読み上げに対応していません。");return}stopSpeech();const u=new SpeechSynthesisUtterance(eras[era][0]+"。"+eras[era][1]);u.lang="ja-JP";u.rate=.93;window.speechSynthesis.speak(u)};
+$("stopSpeak").onclick=stopSpeech;
+$("record").onclick=async()=>{if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){$("recordStatus").textContent="この環境では録音できません。ChatGPTの音声会話をご利用ください。";return}try{stream=await navigator.mediaDevices.getUserMedia({audio:true});recorder=new MediaRecorder(stream);parts=[];recorder.ondataavailable=e=>{if(e.data.size)parts.push(e.data)};recorder.onstop=()=>{if(recordUrl)URL.revokeObjectURL(recordUrl);recordUrl=URL.createObjectURL(new Blob(parts,{type:recorder.mimeType||"audio/webm"}));$("playback").src=recordUrl;$("playback").hidden=false;stream.getTracks().forEach(t=>t.stop());$("recordStatus").textContent="この音声は一時的な再生用です。ページを閉じると消えます。"};recorder.start();$("record").disabled=true;$("stopRecord").disabled=false;$("recordStatus").textContent="録音中です。"}catch{$("recordStatus").textContent="マイクが利用できません。アクセス許可やブラウザの設定を確認してください。"}};
+$("stopRecord").onclick=()=>{if(recorder?.state==="recording")recorder.stop();$("stopRecord").disabled=true;$("record").disabled=false};
+$("save").onclick=()=>{state.guess=$("guess").value;state.explanation=$("explanation").value;state.revision=$("revision").value;state.savedAt=new Date().toISOString();$("saved").textContent=persist()?"保存しました。後日、資料なしで再び説明してみてください。":"この環境では保存できません。記録を別に保管してください。"};
+$("recalled").onclick=()=>{if(!state.savedAt){$("reviewStatus").textContent="まず説明とメモを保存してください。";return}state.reviewed=state.reviewed||[];state.reviewed.push(new Date().toISOString());$("reviewStatus").textContent=persist()?"説明したことを記録しました。":"保存できませんでした。";review()};
+$("export").onclick=()=>{const blob=new Blob([JSON.stringify({qid:"Q02",schemaVersion:1,...state},null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="capitalism-q02-learning.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)};
+eraRender();hypRender();show(0);
+})();
+</script></body></html>
